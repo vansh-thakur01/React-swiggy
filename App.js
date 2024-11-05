@@ -1,37 +1,41 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import img from "./71qcoYgEhzL._SX3000_.jpg";
+import img2 from "./download.jpg";
 
-const heading = React.createElement("div", { id: "heading" }, [
-  React.createElement(
-    "div",
-    { id: "child" },
-    React.createElement("h1", { id: "childChild" }, [
-      React.createElement("h1", { id: "child" }, "one"),
-      React.createElement("h6", { id: "child" }, "one"),
-    ])
-  ),
-  React.createElement(
-    "div",
-    { id: "child" },
-    React.createElement("h1", { id: "childChild" }, [
-      React.createElement("h1", { id: "child" }, "one"),
-      React.createElement("h6", { id: "child" }, "one"),
-    ])
-  ),
-]);
+const jsxHeading = <h1>hi there form jsx</h1>
 
-const h = React.createElement(
-    "div",
-    { id: "child" },
-    "hi");
+const Inside = (Prop) => <p>{Prop.children}hi there</p>
 
-    console.log(h);
+const Heading = ()=> {
+return (
+  <div>
+  <Inside>hi i am there</Inside>
+  <h2>heading<inside /></h2>
+  </div>
+)
+}
+
+const Flok = ()=>{
+  return (<div>
+    <h1>In flok<Inside/></h1>
+    <Heading/>
+  </div>)
+}
+
+// console.log(Heading());
+
+const Header = ()=>{
+  return (
+    <div className="container">
+      <img src={img} alt="img" className="img"></img>
+      <input placeholder="Search" type="text"></input>
+      <img src={img2} alt="img2" className="img2"></img>
+    </div>
+  );
+}
 
 
+const root = ReactDOM.createRoot(document.querySelector('#hithere'));
 
-console.log(heading);
-const root = ReactDOM.createRoot(document.getElementById("hithere"));
-console.log(root);
-root.render(heading);
-
-console.log("ji");
+root.render(<Header/>);

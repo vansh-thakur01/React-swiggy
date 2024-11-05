@@ -1,3 +1,24 @@
 #heading {
  color: red;
 }
+
+.img{
+    height: 70px;
+    width: 150px;
+}
+
+.img2{
+    height: 70px;
+    width: 90px;
+    justify-self: end;
+    /* border-radius: 20px; */
+}
+
+.container{
+    /* margin: 10px; */
+    /* padding: 10px; */
+    /* background-color: rgb(192, 192, 192); */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: space-evenly;
+}
