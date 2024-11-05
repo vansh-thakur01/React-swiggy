@@ -1,8 +1,9 @@
 {
   "name": "nameste",
   "version": "1.0.0",
-  "main": "App.js",
   "scripts": {
+    "start":"parcel i.html",
+    "build":"parcel build i.html --no-source-maps",
     "test": "jest"
   },
   "repository": {
