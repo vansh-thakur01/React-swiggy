@@ -1,0 +1,2 @@
+export const LOGO_IMG = "https://marketplace.canva.com/EAF_LMa_9X4/1/0/1200w/canva-black-and-white-flat-illustrative-food-place-logo-01bjLe6bM-8.png";
+export const CLOUDNERY_LINK = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
