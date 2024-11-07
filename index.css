@@ -61,6 +61,7 @@
     width: 290px;
     display: grid;
     row-gap: 16px;
+    background-color: rgb(245, 245, 245);
 }
 
 .res-cart img{
