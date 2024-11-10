@@ -338,7 +338,7 @@ const res =  [
   const Body = () => {
   let a = useState(res);
   const[f,setf] = a
-  
+  console.log(root._reactInternals);
   return (
     <div className="main-container">
       <div className="nav-bar">
@@ -365,8 +365,12 @@ const res =  [
   );
 };
 
+
+
 const root = ReactDOM.createRoot(document.querySelector("#hithere"));
 
 root.render(<Body />);
 console.dir(Body);
 
+const fiberNode = root._reactInternals;
+console.log(fiberNode);
