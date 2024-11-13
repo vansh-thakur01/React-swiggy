@@ -19,7 +19,7 @@ const NavBar = () => {
           <li>Contact us</li>
           <li>cart</li>
           <button className="btn" onClick={()=>{
-            btnName === "login" ? setBtnName("logout") : setBtnName("login")
+            btnName === "login" ? setBtnName("logout") : setBtnName("login");
           }}>{btnName}</button>
         </ul>
       </div>
