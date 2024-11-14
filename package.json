@@ -2,8 +2,8 @@
   "name": "nameste",
   "version": "1.0.0",
   "scripts": {
-    "start":"parcel i.html",
-    "build":"parcel build i.html --no-source-maps",
+    "start": "parcel i.html",
+    "build": "parcel build i.html --no-source-maps",
     "test": "jest"
   },
   "repository": {
@@ -23,9 +23,10 @@
   },
   "dependencies": {
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.0"
   },
-  "brouserslist":[
+  "brouserslist": [
     "last 4 versions"
   ]
 }
