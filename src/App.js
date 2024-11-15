@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import NavBar from "./Components/Nav.js";
 import {createBrowserRouter,Outlet,RouterProvider} from "react-router-dom"
@@ -47,6 +47,6 @@ const rout = createBrowserRouter([
 const root = ReactDOM.createRoot(document.querySelector("#hithere"));
 
 root.render(<RouterProvider router={rout}/>);
-// root.render(<AppLayout/>);
+
 
 

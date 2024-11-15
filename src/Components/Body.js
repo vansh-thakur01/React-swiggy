@@ -23,12 +23,12 @@ const Body = () => {
       const response = await fetch(SWIGGY_CDN_LINK);
       const data = await response.json();
     //   console.log(data);
-      // const dataOfApi = data?.data?.cards?.filter((val,i)=> i>=3)?.map(val => val?.card?.card?.info);
+    // const dataOfApi = data?.data?.cards?.filter((val,i)=> i>=3)?.map(val => val?.card?.card?.info);
+    console.log(data);
       const dataOfApi =
         data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
           ?.map((val) => val.info)
           .reverse();
-      console.log(dataOfApi);
       return dataOfApi;
     } catch (err) {
       console.log(err);
