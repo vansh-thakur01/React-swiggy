@@ -4,46 +4,41 @@ import RestCart from "./RestCart.js";
 import Shimmer from "./Shimmer-ui.js";
 import { SWIGGY_CDN_LINK } from "../config/utils.js";
 import  {Link} from "react-router-dom";
-import useOnlieStatus from "../config/useOnlineStatus.js";
+import useOnlineStatus from "../config/useOnlineStatus.js";
 
 const Body = () => {
   let [foo, setfoo] = useState([]);
   let [foo2, setfoo2] = useState([]);
-  const online = useOnlieStatus();
+  const online = useOnlineStatus();
   
   useEffect(() => {
-    if(online){
-      console.log("sdgaaaaaaaaaaaaaaaaaaaaaa");
-      fetchData().then((data) => {
-      console.log("sdagds");
+      online && fetchData()?.then((data) => {
       setfoo(data);
       setfoo2(data);
-    })};
+    });
   }, []);
   
   const [searchText, setSearchText] = useState("");
   
 
-  console.log(online);
-  if (online === false) return <h1>Not online</h1>;
-
-
+  
   const fetchData = async () => {
     try {
       const response = await fetch(SWIGGY_CDN_LINK);
       const data = await response.json();
-      // console.log(data);    
       // const dataOfApi = data?.data?.cards?.filter((val,i)=> i>=3)?.map(val => val?.card?.card?.info);
       console.log(data);
       const dataOfApi =
       data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
       ?.map((val) => val.info)
-      .reverse();
+      // .reverse();
       return dataOfApi;
     } catch (err) {
       console.log(err);
     }
   };
+
+  if (!online) return <h1>Not online</h1>;
   
   return (
     <div>
