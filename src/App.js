@@ -15,7 +15,7 @@ const Grocery = React.lazy(() => import("./Components/Grocery.js").then(module =
 
 const AppLayout = () => {
   return (
-    <div className="main-container">
+    <div className="main-container font-serif">
       <NavBar />
       <Outlet />
     </div>
