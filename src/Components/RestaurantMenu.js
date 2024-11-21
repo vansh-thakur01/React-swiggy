@@ -15,11 +15,11 @@ const RestaurantMenu = ()=>{
     console.log(itemCards);
 
     return (
-        <div className="menu">
+        <div>
             <h1>{name}</h1>
             <p>{cuisines} - {costForTwoMessage}</p>
             <h2>Menu</h2>
-            <ul>
+            <ul >
              {itemCards.map((item)=><li key = {item.card.info.id}>{item.card.info.name}</li>)}
             </ul>
         </div>

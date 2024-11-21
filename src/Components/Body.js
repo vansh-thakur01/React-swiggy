@@ -1,37 +1,38 @@
-import React, { useEffect, useState} from "react";
-import { data } from "../config/api-data.js";
+import React, { useEffect, useState } from "react";
 import RestCart from "./RestCart.js";
 import Shimmer from "./Shimmer-ui.js";
 import { SWIGGY_CDN_LINK } from "../config/utils.js";
-import  {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import useOnlineStatus from "../config/useOnlineStatus.js";
 
 const Body = () => {
   let [foo, setfoo] = useState([]);
   let [foo2, setfoo2] = useState([]);
   const online = useOnlineStatus();
-  
-  useEffect(() => {
-      online && fetchData()?.then((data) => {
-      setfoo(data);
-      setfoo2(data);
-    });
-  }, []);
-  
-  const [searchText, setSearchText] = useState("");
-  
 
-  
+  useEffect(() => {
+    online && fetchData()?.then((data) => {
+        setfoo(data);
+        setfoo2(data);
+      });
+  }, []);
+
+  const [searchText, setSearchText] = useState("");
+
   const fetchData = async () => {
     try {
       const response = await fetch(SWIGGY_CDN_LINK);
       const data = await response.json();
-      // const dataOfApi = data?.data?.cards?.filter((val,i)=> i>=3)?.map(val => val?.card?.card?.info);
       console.log(data);
-      const dataOfApi =
-      data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-      ?.map((val) => val.info)
-      // .reverse();
+      let dataInThisIndex;
+      data.data.cards.forEach(
+        (val, i) => val?.card?.card?.gridElements && (dataInThisIndex = i)
+      );
+      const dataOfApi = data?.data?.cards[
+        dataInThisIndex
+      ]?.card?.card?.gridElements?.infoWithStyle?.restaurants?.map(
+        (val) => val.info
+      );
       return dataOfApi;
     } catch (err) {
       console.log(err);
@@ -39,12 +40,12 @@ const Body = () => {
   };
 
   if (!online) return <h1>Not online</h1>;
-  
+
   return (
-    <div>
-      <div className="search">
+    <div className="w-[1200px] mx-auto">
+      <div className="m-5">
         <input
-          className="input"
+          className="w-[92%] p-1.5 border-solid border-r-transparent border-2 border-black "
           type="text"
           value={searchText}
           onChange={(e) => {
@@ -52,6 +53,7 @@ const Body = () => {
           }}
         ></input>
         <button
+          className=" bg-slate-700 text-zinc-200 p-2 px-3 font-semibold rounded-e-2xl"
           onClick={(e) => {
             // const cpy = foo;
 
@@ -71,15 +73,23 @@ const Body = () => {
           setfoo(y);
         }}>Sort</button> */}
       </div>
-      <div className="res-container">
+      <div>
         {foo.length === 0 ? (
-          <Shimmer />
+          <div>
+            <Shimmer />
+          </div>
         ) : (
-          foo.map((val, i) => (
-            <Link key={data.restaurants[i].id} to={"/restaurant/" + data.restaurants[i].id}>
-              <RestCart restdata={val} />
-            </Link>
-          ))
+          <div className="grid grid-cols-4 gap-3">
+            {foo.map((val) => (
+              <Link
+              className="hover:scale-[1.02] ease-in duration-150"
+              key={val.id}
+              to={"/restaurant/" + val.id}
+              >
+                <RestCart restdata={val} />
+              </Link>
+            ))}
+          </div>
         )}
       </div>
     </div>

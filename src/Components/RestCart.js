@@ -1,21 +1,22 @@
 import { CLOUDNERY_LINK } from "../config/utils.js";
 
 const RestCart = ({ restdata }) => {
-    const {
-        cloudinaryImageId,
-        avgRating,
-        cuisines,
-        sla: { slaString: time },
-        name,
-    } = restdata;
-    return (
-        <div className="res-cart">
+  const {
+    cloudinaryImageId,
+    avgRating,
+    cuisines,
+    sla: { slaString: time },
+    name,
+  } = restdata;
+  return (
+    <div>
       <img
-        src={(CLOUDNERY_LINK + cloudinaryImageId)}
+        className="h-[260px] w-[290px] rounded-xl"
+        src={CLOUDNERY_LINK + cloudinaryImageId}
       />
-      <div className="cart-info">
-        <h2>{name}</h2>
-        <div className="div-in-div">
+      <div>
+        <h2 className="font-bold text-xl">{name}</h2>
+        <div>
           <h4>{avgRating}</h4>
           <h4>{time}</h4>
         </div>

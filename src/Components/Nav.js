@@ -1,36 +1,36 @@
 import { LOGO_IMG } from "../config/utils.js";
 import { useState } from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import useOnlineStatus from "../config/useOnlineStatus.js";
 
 const NavBar = () => {
-  const [btnName,setBtnName] = useState("login");
+  const [btnName, setBtnName] = useState("login");
   const online = useOnlineStatus();
 
   return (
-    <div className="nav-bar text-xl bg-red-400">
-      <div className="container-hearder flex justify-between items-center bg-teal-500">
+    <div className="text-2xl font-semibold bg-slate-200">
+      <div className="container-hearder flex justify-between items-center  ">
         <div>
-          <img className="logo w-32" src={LOGO_IMG}></img>
+          <img className="w-32" src={LOGO_IMG}></img>
         </div>
-        <div className="nav bg-black-200 bg-slate-700">
-          <ul className="flex">
-            <li className="pl-10 bg-black">online {online ? "✅" : "🔴"}</li>
-            <li className="pl-10 ">
+        <div>
+          <ul className="flex gap-7 translate-y-[20%]">
+            <li className="hover:text-neutral-950 text-neutral-800" >online {online ? "✅" : "🔴"}</li>
+            <li className="hover:text-neutral-950 text-neutral-800">
               <Link to="/">Home</Link>
             </li>
-            <li className="bg-black pl-28 pt-10">
+            <li className="hover:text-neutral-950 text-neutral-800">
               <Link to="/about">About</Link>
             </li>
-            <li className="bg-red-200 pr-52">
+            <li className="hover:text-neutral-950 text-neutral-800">
               <Link to="/contact">Contact us</Link>
             </li>
-            <li className="bg-green-300 pr-20 pb-52">
+            <li className="hover:text-neutral-950 text-neutral-800">
               <Link to="/grocery">Grocery</Link>
             </li>
-            <li className="bg-orange-600 pl-1 m-1">cart</li>
+            <li className="hover:text-neutral-950 text-neutral-800">cart</li>
             <button
-              className="btn"
+              className="mr-8 bg-slate-800 text-slate-200 p-4 px-6 w-[120px] rounded-3xl -translate-y-[25%]"
               onClick={() => {
                 btnName === "login"
                   ? setBtnName("logout")
