@@ -11,7 +11,8 @@ const Body = () => {
   const online = useOnlineStatus();
 
   useEffect(() => {
-    online && fetchData()?.then((data) => {
+    online &&
+      fetchData()?.then((data) => {
         setfoo(data);
         setfoo2(data);
       });
@@ -75,16 +76,18 @@ const Body = () => {
       </div>
       <div>
         {foo.length === 0 ? (
-          <div>
-            <Shimmer />
+          <div className="[&>div]: [&>div]: grid grid-cols-4 gap-6">
+            {new Array(8).fill(null).map((_, i) => (
+              <Shimmer key={i} />
+            ))}
           </div>
         ) : (
           <div className="grid grid-cols-4 gap-3">
             {foo.map((val) => (
               <Link
-              className="hover:scale-[1.02] ease-in duration-150"
-              key={val.id}
-              to={"/restaurant/" + val.id}
+                className="hover:scale-[0.96] ease-in duration-200"
+                key={val.id}
+                to={"/restaurant/" + val.id}
               >
                 <RestCart restdata={val} />
               </Link>
@@ -97,3 +100,4 @@ const Body = () => {
 };
 
 export default Body;
+

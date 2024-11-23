@@ -8,7 +8,11 @@ const RestaurantMenu = ()=>{
   
     const resInfo = useRestaurantMenuData(resid);
 
-    if(resInfo === null)  return <Shimmer/>
+    if(resInfo === null)  return (
+      <div className="mt-4 ml-4">
+        <Shimmer />
+      </div>
+    );
 
     const {name,cuisines,costForTwoMessage} = resInfo.cards[2].card.card.info;
     const { itemCards } = resInfo.cards[4].groupedCard.cardGroupMap.REGULAR.cards[4].card.card
