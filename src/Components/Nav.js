@@ -2,19 +2,19 @@ import { LOGO_IMG } from "../config/utils.js";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../config/useOnlineStatus.js";
-import { StyledLi } from "../config/StyledJSXElememnt.js"
+import { StyledLi } from "../config/StyledJSXElememnt.js";
 
 const NavBar = () => {
   const [btnName, setBtnName] = useState("login");
   const online = useOnlineStatus();
 
   return (
-    <div className="text-2xl font-semibold bg-slate-200">
-      <div className="flex justify-between items-center  ">
+    <div className="op text-2xl font-semibold bg-slate-200">
+      <div className="test1 flex justify-between items-center  ">
         <Link to="/">
           <img className="w-32 " src={LOGO_IMG}></img>
         </Link>
-        <div>
+        <div className="test2">
           <ul className="flex gap-7 translate-y-[20%]">
             <StyledLi>online {online ? "✅" : "🔴"}</StyledLi>
             <StyledLi>

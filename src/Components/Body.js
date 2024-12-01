@@ -4,7 +4,9 @@ import Shimmer from "./Shimmer-ui.js";
 import { SWIGGY_CDN_LINK } from "../config/utils.js";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../config/useOnlineStatus.js";
+import { withPromotedLabel } from "./RestCart.js";
 
+const RestCardWithType = withPromotedLabel(RestCart);
 const Body = () => {
   let [foo, setfoo] = useState([]);
   let [foo2, setfoo2] = useState([]);
@@ -89,7 +91,7 @@ const Body = () => {
                 key={val.id}
                 to={"/restaurant/" + val.id}
               >
-                <RestCart restdata={val} />
+                {val.veg ? <RestCardWithType restdata={val}/> : <RestCart restdata={val} />}
               </Link>
             ))}
           </div>

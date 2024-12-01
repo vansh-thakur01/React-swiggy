@@ -27,4 +27,5 @@ const ResMenuCard = function ({resdata}) {
   );
 };
 
+
 export default ResMenuCard;

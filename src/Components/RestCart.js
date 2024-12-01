@@ -26,4 +26,14 @@ const RestCart = ({ restdata }) => {
   );
 };
 
+export const withPromotedLabel = function (ResCard) {
+  return (props) => {
+    return (<>
+      <h1 className="absolute mx-2 bg-green-400 rounded-b-lg p-1 text-slate-200 w-[32px] h-[22px]  text-xs font-bold flex justify-center">Veg</h1>
+      <ResCard {...props} />
+    </>);
+  };
+};
+
+
 export default RestCart;
