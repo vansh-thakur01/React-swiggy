@@ -80,7 +80,9 @@ const Body = () => {
         {foo.length === 0 ? (
           <div className="[&>div]: [&>div]: grid grid-cols-4 gap-6">
             {new Array(8).fill(null).map((_, i) => (
-              <Shimmer key={i} />
+              <div key={i}>
+              <Shimmer />
+              </div>
             ))}
           </div>
         ) : (
@@ -88,7 +90,7 @@ const Body = () => {
             {foo.map((val) => (
               <Link
                 className="hover:scale-[0.96] ease-in duration-200"
-                key={val.id}
+                key={val?.id}
                 to={"/restaurant/" + val.id}
               >
                 {val.veg ? <RestCardWithType restdata={val}/> : <RestCart restdata={val} />}

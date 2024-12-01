@@ -16,7 +16,7 @@ const NavBar = () => {
         </Link>
         <div className="test2">
           <ul className="flex gap-7 translate-y-[20%]">
-            <StyledLi>online {online ? "✅" : "🔴"}</StyledLi>
+            <StyledLi>{online ? "Online✅" : "Offline🔴"}</StyledLi>
             <StyledLi>
               <Link to="/">Home</Link>
             </StyledLi>
