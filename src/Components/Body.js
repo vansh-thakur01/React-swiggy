@@ -26,7 +26,7 @@ const Body = () => {
     try {
       const response = await fetch(SWIGGY_CDN_LINK);
       const data = await response.json();
-      console.log(data);
+      // console.log(data);
       let dataInThisIndex;
       data.data.cards.forEach(
         (val, i) => val?.card?.card?.gridElements && (dataInThisIndex = i)

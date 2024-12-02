@@ -1,4 +1,4 @@
-import React, { useState, Suspense } from "react";
+import React, { useState,useEffect, Suspense, useContext } from "react";
 import ReactDOM from "react-dom/client";
 import NavBar from "./Components/Nav.js";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
@@ -7,18 +7,31 @@ import Contact from "./Components/Contact.js";
 import Error from "./Components/Error.js";
 import Body from "./Components/Body.js";
 import RestaurantMenu from "./Components/RestaurantMenu.js";
+import userContext from './config/userContext.js'
 // import Grocery from "./Components/Grocery.js";
 
 const Grocery = React.lazy(() => import("./Components/Grocery.js").then(module => ({ default: module.Grocery })));
-
 // console.dir(Grocery);
 
 const AppLayout = () => {
+  const {loginUser} = useContext(userContext)
+  const [userName,setUserName] = useState(loginUser);
+  useEffect(()=>{
+    const data = {
+      user:"Iron Man",
+    }
+    console.log(userName);
+    setUserName(data.user);
+    console.log(userName);
+  },[])
+
   return (
-    <div className="font-sans text-neutral-900">
-      <NavBar />
-      <Outlet />
-    </div>
+    <userContext.Provider value={{ loginUser: userName}}>
+      <div className="font-sans text-neutral-900">
+        <NavBar />
+        <Outlet />
+      </div>
+    </userContext.Provider>
   );
 };
 
