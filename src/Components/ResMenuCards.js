@@ -1,6 +1,12 @@
+import { useDispatch } from "react-redux";
 import { CARD_MENU_IMG } from "../config/utils.js";
+import { addItem } from "../config/reduxStore/cartSlice.js";
 
 const ResMenuCard = function ({resdata}) {
+  const dispatch = useDispatch();
+  const handleAddItems = (resdata)=>{
+    dispatch(addItem(resdata));
+  }
   return (
     <div className="flex justify-between items-center h-[225px] w-[1100px] mb-7 pb-16 py-4 border-b-2 border-gray-300">
       <div className="h-[165px] w-[690px] mb-4">
@@ -26,7 +32,9 @@ const ResMenuCard = function ({resdata}) {
         ) : (
           <div></div>
         )}
-        <div className="absolute -bottom-6 -right-[10%] active:scale-[0.98] ease-in text-green-600 text-2xl font-bold bg-slate-50 shadow-lg py-2 px-8 rounded-xl border-solid border-stone-200 border cursor-pointer">
+        <div
+        onClick={()=> handleAddItems(resdata)} 
+        className="absolute -bottom-6 -right-[10%] active:scale-[0.98] ease-in text-green-600 text-2xl font-bold bg-slate-50 shadow-lg py-2 px-8 rounded-xl border-solid border-stone-200 border cursor-pointer">
           ADD
         </div>
       </div>
