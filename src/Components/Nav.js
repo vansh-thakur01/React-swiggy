@@ -55,7 +55,7 @@ const NavBar = () => {
 
                   <div>Cart</div>
                   <div className="absolute left-[13%] top-[15%] text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center">
-                    {cart.length}
+                    {cart.flat(Infinity).length}
                   </div>
                 </div>
               </Link>

@@ -4,3 +4,4 @@ export const SWIGGY_CDN_LINK = "https://www.swiggy.com/dapi/restaurants/list/v5?
 export const MENU_API = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=21.99740&lng=79.00110&restaurantId=";
 export const GITHUB_USER_URL = "https://api.github.com/users/vansh-thakur01";
 export const CARD_MENU_IMG = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/";
+export const CART_MENU_IMG = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_100,h_100,c_fill/"
