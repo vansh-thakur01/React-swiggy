@@ -49,7 +49,7 @@ const AppLayout = () => {
   );
 };
 
-const unsub = store.subscribe(()=>{console.log("7244trsrsdyje 65e 65eue55")});
+// const unsub = store.subscribe(()=>{console.log("7244trsrsdyje 65e 65eue55")});
 
 const rout = createBrowserRouter([
   {

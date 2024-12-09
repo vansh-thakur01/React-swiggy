@@ -4,12 +4,14 @@ import useRestaurantMenuData from "../config/useRestaurantMenudata.js";
 import ResMenuCard from "./ResMenuCards.js";
 import { useState } from "react";
 import Accordion from "./Accordion.js";
-
+import { useDispatch } from "react-redux";
+import { addShop,removeShop} from "../config/reduxStore/cartSlice.js"
 const RestaurantMenu = () => {
   const { resid } = useParams();
   const resInfo = useRestaurantMenuData(resid);
   const [cardHiddenArr, setcardHidden] = useState([]);
   const [accordionShow,setAccordionShow] = useState([1,1]);
+  const dispatch = useDispatch();
 
   if (resInfo === null)
     return (
@@ -23,7 +25,7 @@ const RestaurantMenu = () => {
           ))}
       </div>
     );
-
+    
   const cardData = resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
   const data = cardData.filter(
     (val) =>
@@ -31,6 +33,9 @@ const RestaurantMenu = () => {
   );
   const cardArr = data.map((val) => val?.card?.card?.title);
   cardHiddenArr.length <= 0 ? setcardHidden(cardArr) : "";
+  console.log(resInfo.cards[2].card.card.info,"sadddddddddddddddddddddddddddddddddddddddd");
+  dispatch(addShop(resInfo.cards[2].card.card.info));
+
   return (
     <div className="w-[1100px] mx-auto">
       <h1 className="text-4xl bg-slate-900 text-slate-200 p-2 font-extrabold text-center my-4 mt-6">{resInfo.cards[0].card.card.text}</h1>
