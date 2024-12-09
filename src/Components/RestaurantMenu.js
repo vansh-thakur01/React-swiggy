@@ -2,15 +2,21 @@ import ShimmerMenu from "./ShimmerMenu.js";
 import { useParams } from "react-router-dom";
 import useRestaurantMenuData from "../config/useRestaurantMenudata.js";
 import ResMenuCard from "./ResMenuCards.js";
-import { useState } from "react";
+import { useContext, useState} from "react";
 import Accordion from "./Accordion.js";
 import { useDispatch } from "react-redux";
 import { addShop,removeShop} from "../config/reduxStore/cartSlice.js"
+import DialogBox from "./DialogBox.js";
+import { contextForHide } from "../config/userContext.js";
+
+
 const RestaurantMenu = () => {
   const { resid } = useParams();
   const resInfo = useRestaurantMenuData(resid);
   const [cardHiddenArr, setcardHidden] = useState([]);
   const [accordionShow,setAccordionShow] = useState([1,1]);
+  const [showDialogBox,setShowDialogBox] = useState("hidden");
+  console.log(showDialogBox);
   const dispatch = useDispatch();
 
   if (resInfo === null)
@@ -37,20 +43,37 @@ const RestaurantMenu = () => {
   dispatch(addShop(resInfo.cards[2].card.card.info));
 
   return (
-    <div className="w-[1100px] mx-auto">
-      <h1 className="text-4xl bg-slate-900 text-slate-200 p-2 font-extrabold text-center my-4 mt-6">{resInfo.cards[0].card.card.text}</h1>
-      {data?.map((val, i) => {
-        const { card } = val?.card;
-        return (
-          <div>
-            <Accordion card={card} cardHiddenArr={cardHiddenArr} i={i} setcardHidden={setcardHidden} stateViaProps={(i!==accordionShow)? false : true} whichAccotdionToOpne={(repeatClickOnSameAccord)=>{
-              let whichAccordionToOpen;
-              repeatClickOnSameAccord ? (whichAccordionToOpen=null): (whichAccordionToOpen=i); 
-              return setAccordionShow(whichAccordionToOpen)}}/>
-          </div>
-        );
-      })}
-    </div>
+    <contextForHide.Provider value={{showDialogBox:showDialogBox,setShowDialogbox:setShowDialogBox}}>
+      <div className="w-[1100px] mx-auto ">
+        <div onClick={console.log("hi")} className={"flex items-center justify-center z-13 bg-slate-400 "}>
+          <DialogBox />
+        </div>
+        <h1 className="text-4xl bg-slate-900 text-slate-200 p-2 font-extrabold text-center my-4 mt-6">
+          {resInfo.cards[0].card.card.text}
+        </h1>
+        {data?.map((val, i) => {
+          const { card } = val?.card;
+          return (
+            <div>
+              <Accordion
+                card={card}
+                cardHiddenArr={cardHiddenArr}
+                i={i}
+                setcardHidden={setcardHidden}
+                stateViaProps={i !== accordionShow ? false : true}
+                whichAccotdionToOpne={(repeatClickOnSameAccord) => {
+                  let whichAccordionToOpen;
+                  repeatClickOnSameAccord
+                    ? (whichAccordionToOpen = null)
+                    : (whichAccordionToOpen = i);
+                  return setAccordionShow(whichAccordionToOpen);
+                }}
+              />
+            </div>
+          );
+        })}
+      </div>
+    </contextForHide.Provider>
   );
 };
 
