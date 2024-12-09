@@ -2,13 +2,17 @@ import { useDispatch, useSelector } from "react-redux";
 import { CARD_MENU_IMG } from "../config/utils.js";
 import { addItem } from "../config/reduxStore/cartSlice.js";
 import { NonVegIcon, VegIcon } from "../config/utilsIcons/Icons.js";
+import { useContext } from "react";
+import { contextForHide } from "../config/userContext.js";
 
 const ResMenuCard = function ({resdata}) {
+  const contextData = useContext(contextForHide);
   const shop = useSelector(store=> store.cart.shop);
   const dispatch = useDispatch();
   const handleAddItems = (resdata)=>{
     dispatch(addItem(resdata));
   }
+
 
   // console.log(resdata,"resdata");
   return (
@@ -38,6 +42,9 @@ const ResMenuCard = function ({resdata}) {
         )}
         <div
         onClick={()=>{
+           const show = contextData.showDialogBox !== "hidden" ? "hidden" : "block";
+          console.log(contextData.showDialogBox,show, "vvvvv");
+           contextData.setShowDialogbox(show)
            handleAddItems(resdata)
           }} 
         className="absolute -bottom-6 -right-[10%] active:scale-[0.98] ease-in text-green-600 text-2xl font-bold bg-slate-50 shadow-lg py-2 px-8 rounded-xl border-solid border-stone-200 border cursor-pointer">
