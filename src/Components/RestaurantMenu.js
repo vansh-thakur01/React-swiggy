@@ -61,16 +61,23 @@ const RestaurantMenu = () => {
   // dispatch(addShop(resInfo.cards[2].card.card.info));
 =======
   console.log(resInfo.cards[2].card.card.info,"sadddddddddddddddddddddddddddddddddddddddd");
+<<<<<<< HEAD
   dispatch(addShop(resInfo.cards[2].card.card.info));
 >>>>>>> 371fecf (working on 12ep)
 
   return (
 <<<<<<< HEAD
+=======
+  // dispatch(addShop(resInfo.cards[2].card.card.info));
+
+  return (
+>>>>>>> f510b87 (working on ep 12 still)
     <contextForHide.Provider value={{showDialogBox:showDialogBox,setShowDialogbox:setShowDialogBox,currentShop:resInfo.cards[2].card.card.info}}>
       <div>
         <DialogBox />
       </div>
       <div className="w-[1100px] mx-auto">
+<<<<<<< HEAD
 =======
     <contextForHide.Provider value={{showDialogBox:showDialogBox,setShowDialogbox:setShowDialogBox}}>
       <div className="w-[1100px] mx-auto ">
@@ -78,6 +85,8 @@ const RestaurantMenu = () => {
           <DialogBox />
         </div>
 >>>>>>> 5046f2c (working on ep12)
+=======
+>>>>>>> f510b87 (working on ep 12 still)
         <h1 className="text-4xl bg-slate-900 text-slate-200 p-2 font-extrabold text-center my-4 mt-6">
           {resInfo.cards[0].card.card.text}
         </h1>
