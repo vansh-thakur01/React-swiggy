@@ -14,6 +14,8 @@ const useRestaurantMenuData  = (resId)=>{
         setResInfo(data.data);
     }
 
+    // fixed top-0 left-0 w-full h-screen flex items-center justify-center bg-opacity-50 bg-gray-800 z-10
+
     return resInfo;
 }
 

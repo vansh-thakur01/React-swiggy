@@ -4,10 +4,12 @@ import { addItem } from "../config/reduxStore/cartSlice.js";
 import { NonVegIcon, VegIcon } from "../config/utilsIcons/Icons.js";
 import { useContext } from "react";
 import { contextForHide } from "../config/userContext.js";
+import { storingCurrentItem,addShop } from "../config/reduxStore/cartSlice.js";
 
 const ResMenuCard = function ({resdata}) {
   const contextData = useContext(contextForHide);
   const shop = useSelector(store=> store.cart.shop);
+  console.log(shop,"shop");
   const dispatch = useDispatch();
   const handleAddItems = (resdata)=>{
     dispatch(addItem(resdata));
@@ -42,11 +44,18 @@ const ResMenuCard = function ({resdata}) {
         )}
         <div
         onClick={()=>{
-           const show = contextData.showDialogBox !== "hidden" ? "hidden" : "block";
-          console.log(contextData.showDialogBox,show, "vvvvv");
-           contextData.setShowDialogbox(show)
-           handleAddItems(resdata)
-          }} 
+          dispatch(addShop(contextData.currentShop));
+          let show = "hidden";
+          if (shop.length >= 1 && (contextData.currentShop.name !== shop[0].name)) {
+            show = "block";
+            dispatch(storingCurrentItem(resdata));
+          } else {
+            handleAddItems(resdata);
+          }
+          contextData.setShowDialogbox(show);
+          // console.log(contextData.showDialogBox,show, "vvvvv");
+          // console.log(shop,'ppppppppp');
+        }} 
         className="absolute -bottom-6 -right-[10%] active:scale-[0.98] ease-in text-green-600 text-2xl font-bold bg-slate-50 shadow-lg py-2 px-8 rounded-xl border-solid border-stone-200 border cursor-pointer">
           ADD
         </div>
