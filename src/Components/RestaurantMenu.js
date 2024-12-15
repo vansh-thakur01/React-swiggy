@@ -40,14 +40,14 @@ const RestaurantMenu = () => {
   const cardArr = data.map((val) => val?.card?.card?.title);
   cardHiddenArr.length <= 0 ? setcardHidden(cardArr) : "";
   console.log(resInfo.cards[2].card.card.info,"sadddddddddddddddddddddddddddddddddddddddd");
-  dispatch(addShop(resInfo.cards[2].card.card.info));
+  // dispatch(addShop(resInfo.cards[2].card.card.info));
 
   return (
-    <contextForHide.Provider value={{showDialogBox:showDialogBox,setShowDialogbox:setShowDialogBox}}>
-      <div className="w-[1100px] mx-auto ">
-        <div onClick={console.log("hi")} className={"flex items-center justify-center z-13 bg-slate-400 "}>
-          <DialogBox />
-        </div>
+    <contextForHide.Provider value={{showDialogBox:showDialogBox,setShowDialogbox:setShowDialogBox,currentShop:resInfo.cards[2].card.card.info}}>
+      <div>
+        <DialogBox />
+      </div>
+      <div className="w-[1100px] mx-auto">
         <h1 className="text-4xl bg-slate-900 text-slate-200 p-2 font-extrabold text-center my-4 mt-6">
           {resInfo.cards[0].card.card.text}
         </h1>

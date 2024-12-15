@@ -19,7 +19,7 @@ const Cart = () => {
   }, []);
 
   if (shop === null) return <CartShimmer />;
-
+  console.log(shop,"shoooooooooooooooooooooooop");
   return (
     <div className="bg-red-600 h-screen">
       <div className="pt-10 w-[1350px] mx-auto flex gap-x-10 bg-black">
@@ -29,7 +29,7 @@ const Cart = () => {
         </div>
         <div>
           <div className="bg-slate-50 w-[400px] h-[500px] px-7 py-5 pr-2">
-            <Link to={"/restaurant/" + shop.id}>
+            <Link to={"/restaurant/" + shop[0].id}>
                 <CartShop shop={shop} />
             </Link>
             <div className="w-[370px]">
