@@ -6,7 +6,7 @@ const CartItem = ({ item, i }) => {
   const dispatch = useDispatch();  
   
   return (
-    <div className="grid grid-cols-2 items-center font-normal space-x-7 mb-4">
+    <div className="flex items-center font-normal justify-between mb-4">
       <div className="flex  gap-3">
         <div className="mt-1.5">
           {item[0].itemAttribute.vegClassifier === "VEG" ? (
@@ -15,9 +15,9 @@ const CartItem = ({ item, i }) => {
             <NonVegIcon />
           )}
         </div>
-        <h6 className="w-[150px]">{item[0].name}</h6>
+        <h6 className="w-[150px] line-clamp-1">{item[0].name}</h6>
       </div>
-      <div className="flex w-[135px] items-center justify-between">
+      <div className="flex w-[140px] items-center justify-between">
         <div className="flex gap-3 px-2 py-[5px] border-[2.3px] border-gray-300 w-[82.5px] ">
           <button
             onClick={() => {

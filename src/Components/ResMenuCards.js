@@ -28,7 +28,7 @@ const ResMenuCard = function ({resdata}) {
             {resdata.ratings.aggregatedRating.rating}
           </span>
         </h4>
-        <p className="text-[19px] text-gray-500 font-[500]">
+        <p className="text-[19px] text-gray-500 font-[500] line-clamp-2">
           {resdata.description}
         </p>
       </div>
