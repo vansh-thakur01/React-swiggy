@@ -7,10 +7,14 @@ const CartItem = ({ item, i }) => {
   
   return (
 <<<<<<< HEAD
+<<<<<<< HEAD
     <div className="flex items-center font-normal justify-between mb-4">
 =======
     <div className="grid grid-cols-2 items-center font-normal space-x-7 mb-4">
 >>>>>>> 371fecf (working on 12ep)
+=======
+    <div className="flex items-center font-normal justify-between mb-4">
+>>>>>>> 4d778a8 (working still)
       <div className="flex  gap-3">
         <div className="mt-1.5">
           {item[0].itemAttribute.vegClassifier === "VEG" ? (
@@ -20,14 +24,18 @@ const CartItem = ({ item, i }) => {
           )}
         </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <h6 className="w-[150px] line-clamp-1">{item[0].name}</h6>
       </div>
       <div className="flex w-[155px] items-center justify-between">
         <div className="flex gap-1 px-2 py-[5px] border-[2.3px] border-gray-300 w-[92px]">
 =======
         <h6 className="w-[150px]">{item[0].name}</h6>
+=======
+        <h6 className="w-[150px] line-clamp-1">{item[0].name}</h6>
+>>>>>>> 4d778a8 (working still)
       </div>
-      <div className="flex w-[135px] items-center justify-between">
+      <div className="flex w-[140px] items-center justify-between">
         <div className="flex gap-3 px-2 py-[5px] border-[2.3px] border-gray-300 w-[82.5px] ">
 >>>>>>> 371fecf (working on 12ep)
           <button

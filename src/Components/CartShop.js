@@ -11,12 +11,18 @@ const CartShop = ({shop})=>{
             className="w-[65px] h-[65px]"
             src={CART_MENU_IMG + shop.cloudinaryImageId}
           ></img>
+<<<<<<< HEAD
           <div className="leading-non mt-1">
             <h4 className="text-[18px] leading-[15px] font-semibold text-zinc-900 mb-1">
+=======
+          <div className="leading-none">
+            <h4 className="text-[18px] leading-[21px] font-semibold text-zinc-900 mb-2">
+>>>>>>> 4d778a8 (working still)
               {shop.name}
             </h4>
             <h5 className="text-gray-500 ">{shop.areaName}</h5>
           </div>
+<<<<<<< HEAD
 =======
 =======
   console.log(shop,"aaaaaaaaaaaaaaaaaaaa");
@@ -31,6 +37,8 @@ const CartShop = ({shop})=>{
           <h4 className="text-lg font-semibold text-zinc-900">{shop.name}</h4>
           <h5 className="text-gray-500 ">{shop.areaName}</h5>
 >>>>>>> 371fecf (working on 12ep)
+=======
+>>>>>>> 4d778a8 (working still)
         </div>
       </div>
     );
