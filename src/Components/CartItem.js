@@ -29,6 +29,7 @@ const CartItem = ({ item, i }) => {
       </div>
       <div className="flex w-[155px] items-center justify-between">
         <div className="flex gap-1 px-2 py-[5px] border-[2.3px] border-gray-300 w-[92px]">
+<<<<<<< HEAD
 =======
         <h6 className="w-[150px]">{item[0].name}</h6>
 =======
@@ -38,6 +39,8 @@ const CartItem = ({ item, i }) => {
       <div className="flex w-[140px] items-center justify-between">
         <div className="flex gap-3 px-2 py-[5px] border-[2.3px] border-gray-300 w-[82.5px] ">
 >>>>>>> 371fecf (working on 12ep)
+=======
+>>>>>>> 044079d (working on 21 dec)
           <button
             onClick={() => {
               dispatch(removeItem(i));
@@ -55,10 +58,14 @@ const CartItem = ({ item, i }) => {
             </svg>
           </button>
 <<<<<<< HEAD
+<<<<<<< HEAD
           <div className="text-green-600 font-[640] w-14 flex justify-center items-center">{item.length}</div>
 =======
           <div className="text-green-600 font-[640]">{item.length}</div>
 >>>>>>> 371fecf (working on 12ep)
+=======
+          <div className="text-green-600 font-[640] w-14 flex justify-center items-center">{item.length}</div>
+>>>>>>> 044079d (working on 21 dec)
           <button
             onClick={() => {
               dispatch(addItemByPlus(i));
