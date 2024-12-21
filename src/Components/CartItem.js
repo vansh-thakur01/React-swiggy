@@ -17,8 +17,8 @@ const CartItem = ({ item, i }) => {
         </div>
         <h6 className="w-[150px] line-clamp-1">{item[0].name}</h6>
       </div>
-      <div className="flex w-[140px] items-center justify-between">
-        <div className="flex gap-3 px-2 py-[5px] border-[2.3px] border-gray-300 w-[82.5px] ">
+      <div className="flex w-[155px] items-center justify-between">
+        <div className="flex gap-1 px-2 py-[5px] border-[2.3px] border-gray-300 w-[92px]">
           <button
             onClick={() => {
               dispatch(removeItem(i));
@@ -35,7 +35,7 @@ const CartItem = ({ item, i }) => {
               <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14" />
             </svg>
           </button>
-          <div className="text-green-600 font-[640]">{item.length}</div>
+          <div className="text-green-600 font-[640] w-14 flex justify-center items-center">{item.length}</div>
           <button
             onClick={() => {
               dispatch(addItemByPlus(i));
