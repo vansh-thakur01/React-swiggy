@@ -5,7 +5,7 @@ const cartSlice = createSlice({
   initialState: {
     shop: [],
     items: [],
-    currentItem:null,
+    currentItem: null,
   },
   reducers: {
     addItem: (state, action) => {
@@ -25,23 +25,23 @@ const cartSlice = createSlice({
       state.items[action.payload].push(state.items[action.payload][0]);
     },
     removeItem: (state, action) => {
+      if (state.items.length <= 1) state.shop.length = 0;
       if (state.items[action.payload].length <= 1) {
         state.items.splice(action.payload, 1);
       } else {
         state.items[action.payload].pop();
       }
     },
-    removeAllItems:(state)=>{
+    removeAllItems: (state) => {
       state.items.length = 0;
     },
     addShop: (state, action) => {
       console.log(action.payload, "qqqqqqqqqqqqqqqqqqqqqqq");
       if (state.shop.length === 0) {
         state.shop[0] = action.payload;
-      } 
-      else if (action.payload.name !== state.shop[0].name) {
-          state.shop[1] = action.payload;
-        }
+      } else if (action.payload.name !== state.shop[0].name) {
+        state.shop[1] = action.payload;
+      }
     },
     removeShop: (state) => {
       state.shop.length = 0;
@@ -50,7 +50,7 @@ const cartSlice = createSlice({
       state: [];
       state.items.length = 0;
     },
-    storingCurrentItem:(state,action)=>{
+    storingCurrentItem: (state, action) => {
       state.currentItem = action.payload;
     },
   },

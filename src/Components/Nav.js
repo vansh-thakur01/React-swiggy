@@ -15,7 +15,7 @@ const NavBar = () => {
   const cart = useSelector((store)=> store.cart.items);
 
   return (
-    <div className="text-2xl font-semibold bg-slate-200">
+    <div className="text-2xl font-semibold bg-slate-50 shadow-bottom-shadow">
       <div className="test1 flex justify-between items-center  ">
         <Link to="/">
           <img className="w-32 " src={LOGO_IMG}></img>
