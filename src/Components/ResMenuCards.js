@@ -10,7 +10,7 @@ const ResMenuCard = function ({resdata}) {
   const contextData = useContext(contextForHide);
   const shop = useSelector(store=> store.cart.shop);
   const items = useSelector(store=>store.cart.items);
-  console.log(shop,"shop");
+  // console.log(shop,"shop");
   const dispatch = useDispatch();
   const handleAddItems = (resdata)=>{
     dispatch(addItem(resdata));
@@ -65,7 +65,7 @@ const ResMenuCard = function ({resdata}) {
         <div className="flex absolute -bottom-6 -right-[10%] ease-in text-green-600 text-2xl font-bold bg-slate-50 shadow-lg py-2 px-3 rounded-xl border-solid border-stone-200 border cursor-pointer gap-2">
             <button
               onClick={() => {
-                console.log(itemsNameIndex);
+                // console.log(itemsNameIndex);
                 dispatch(removeItem(itemsNameIndex));
               }}
             >
@@ -82,6 +82,7 @@ const ResMenuCard = function ({resdata}) {
             </button>
             <div className="text-green-600 font-[640] flex justify-center items-center w-9 transition-transform duration-700">{items.find(val=>val[0].name === resdata.name).length}</div>
             <button
+              data-testid="plusButton"
               onClick={() => {
                 dispatch(addItemByPlus(itemsNameIndex));
               }}
@@ -90,13 +91,13 @@ const ResMenuCard = function ({resdata}) {
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke-width="2.9"
+                strokeWidth="2.9"
                 stroke="green"
-                class="size-5"
+                className="size-5"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   d="M12 4.5v15m7.5-7.5h-15"
                 />
               </svg>

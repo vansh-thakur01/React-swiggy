@@ -25,7 +25,7 @@ const AppLayout = () => {
   const [userName, setUserName] = useState(loginUser);
   useEffect(() => {
     const data = {
-      user: "Iron Man",
+      user: "iron",
     };
     console.log(userName, "(form app before the hook gone in hook list )");
     setUserName(data.user);

@@ -1,6 +1,7 @@
 import { CLOUDNERY_LINK } from "../config/utils.js";
 
 const RestCart = ({ restdata }) => {
+  // console.log(restdata);
   const {
     cloudinaryImageId,
     avgRating,
@@ -11,6 +12,7 @@ const RestCart = ({ restdata }) => {
   return (
     <div>
       <img
+      data-testid="rescart"
         className="h-[260px] w-[290px] rounded-xl"
         src={CLOUDNERY_LINK + cloudinaryImageId}
       />

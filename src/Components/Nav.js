@@ -10,7 +10,7 @@ const NavBar = () => {
   const {loginUser} = useContext(context);
   const [btnName, setBtnName] = useState(loginUser);
   const online = useOnlineStatus();
-  console.log(btnName,"btn");
+  // console.log(btnName,"btn");
   
   const cart = useSelector((store)=> store.cart.items);
 
@@ -54,7 +54,7 @@ const NavBar = () => {
                   </svg>
 
                   <div>Cart</div>
-                  <div className="absolute left-[13%] top-[15%] text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center">
+                  <div data-testid="cartItems" className="items absolute left-[13%] top-[15%] text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center">
                     {cart.flat(Infinity).length}
                   </div>
                 </div>

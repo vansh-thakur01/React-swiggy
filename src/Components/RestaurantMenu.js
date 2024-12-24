@@ -16,7 +16,7 @@ const RestaurantMenu = () => {
   const [cardHiddenArr, setcardHidden] = useState([]);
   const [accordionShow,setAccordionShow] = useState([1,1]);
   const [showDialogBox,setShowDialogBox] = useState("hidden");
-  console.log(showDialogBox);
+  // console.log(showDialogBox);
   const dispatch = useDispatch();
 
   if (resInfo === null)
@@ -39,7 +39,7 @@ const RestaurantMenu = () => {
   );
   const cardArr = data.map((val) => val?.card?.card?.title);
   cardHiddenArr.length <= 0 ? setcardHidden(cardArr) : "";
-  console.log(resInfo.cards[2].card.card.info,"sadddddddddddddddddddddddddddddddddddddddd");
+  // console.log(resInfo.cards[2].card.card.info,"sadddddddddddddddddddddddddddddddddddddddd");
   // dispatch(addShop(resInfo.cards[2].card.card.info));
 
   return (

@@ -36,7 +36,7 @@ const cartSlice = createSlice({
       state.items.length = 0;
     },
     addShop: (state, action) => {
-      console.log(action.payload, "qqqqqqqqqqqqqqqqqqqqqqq");
+      // console.log(action.payload, "qqqqqqqqqqqqqqqqqqqqqqq");
       if (state.shop.length === 0) {
         state.shop[0] = action.payload;
       } else if (action.payload.name !== state.shop[0].name) {
