@@ -32,8 +32,12 @@ const RestaurantMenu = () => {
 >>>>>>> 371fecf (working on 12ep)
 =======
   const [showDialogBox,setShowDialogBox] = useState("hidden");
+<<<<<<< HEAD
   console.log(showDialogBox);
 >>>>>>> 5046f2c (working on ep12)
+=======
+  // console.log(showDialogBox);
+>>>>>>> 7a46719 (done)
   const dispatch = useDispatch();
 
   if (resInfo === null)
@@ -57,6 +61,7 @@ const RestaurantMenu = () => {
   const cardArr = data.map((val) => val?.card?.card?.title);
   cardHiddenArr.length <= 0 ? setcardHidden(cardArr) : "";
 <<<<<<< HEAD
+<<<<<<< HEAD
   // console.log(resInfo.cards[2].card.card.info,"sadddddddddddddddddddddddddddddddddddddddd");
   // dispatch(addShop(resInfo.cards[2].card.card.info));
 =======
@@ -68,6 +73,9 @@ const RestaurantMenu = () => {
   return (
 <<<<<<< HEAD
 =======
+=======
+  // console.log(resInfo.cards[2].card.card.info,"sadddddddddddddddddddddddddddddddddddddddd");
+>>>>>>> 7a46719 (done)
   // dispatch(addShop(resInfo.cards[2].card.card.info));
 
   return (
