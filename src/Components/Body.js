@@ -50,10 +50,14 @@ const Body = () => {
       <div className="m-5">
         <input
 <<<<<<< HEAD
+<<<<<<< HEAD
           data-testid = "searchBox" 
 =======
           data-testid = "searchBox"
 >>>>>>> 7a46719 (done)
+=======
+          data-testid = "searchBox" 
+>>>>>>> 6caa883 (24 12 25)
           className="w-[92%] p-1.5 border-solid border-r-transparent border-2 border-black "
           type="text"
           value={searchText}
