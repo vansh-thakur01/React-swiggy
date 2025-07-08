@@ -6,17 +6,23 @@ import { useContext, useState} from "react";
 import Accordion from "./Accordion.js";
 import { useDispatch } from "react-redux";
 import { addShop,removeShop} from "../config/reduxStore/cartSlice.js"
+<<<<<<< HEAD
 import DialogBox from "./DialogBox.js";
 import { contextForHide } from "../config/userContext.js";
 
 
+=======
+>>>>>>> 371fecf (working on 12ep)
 const RestaurantMenu = () => {
   const { resid } = useParams();
   const resInfo = useRestaurantMenuData(resid);
   const [cardHiddenArr, setcardHidden] = useState([]);
   const [accordionShow,setAccordionShow] = useState([1,1]);
+<<<<<<< HEAD
   const [showDialogBox,setShowDialogBox] = useState("hidden");
   // console.log(showDialogBox);
+=======
+>>>>>>> 371fecf (working on 12ep)
   const dispatch = useDispatch();
 
   if (resInfo === null)
@@ -39,8 +45,13 @@ const RestaurantMenu = () => {
   );
   const cardArr = data.map((val) => val?.card?.card?.title);
   cardHiddenArr.length <= 0 ? setcardHidden(cardArr) : "";
+<<<<<<< HEAD
   // console.log(resInfo.cards[2].card.card.info,"sadddddddddddddddddddddddddddddddddddddddd");
   // dispatch(addShop(resInfo.cards[2].card.card.info));
+=======
+  console.log(resInfo.cards[2].card.card.info,"sadddddddddddddddddddddddddddddddddddddddd");
+  dispatch(addShop(resInfo.cards[2].card.card.info));
+>>>>>>> 371fecf (working on 12ep)
 
   return (
     <contextForHide.Provider value={{showDialogBox:showDialogBox,setShowDialogbox:setShowDialogBox,currentShop:resInfo.cards[2].card.card.info}}>

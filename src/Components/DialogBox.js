@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useContext } from "react";
 import { contextForHide } from "../config/userContext.js";
 import { useSelector ,useDispatch} from "react-redux";
@@ -34,6 +35,16 @@ const DialogBox = () => {
         </div>
       </div>
     </div>
+=======
+const DialogBox = () => {
+  return (
+    <div>
+      <h2> Items already in cart</h2>
+      <p>
+        Your cart contains items from other restaurant. Would you like to reset
+        your cart for adding items from this restaurant ?
+      </p>
+>>>>>>> 371fecf (working on 12ep)
     </div>
   );
 };
