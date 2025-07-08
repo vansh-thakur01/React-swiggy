@@ -97,3 +97,6 @@ const rout = createBrowserRouter([
 const root = ReactDOM.createRoot(document.querySelector("#hithere"));
 
 root.render(<RouterProvider router={rout} />);
+
+console.log(root);
+

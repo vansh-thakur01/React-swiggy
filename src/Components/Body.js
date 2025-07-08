@@ -49,7 +49,7 @@ const Body = () => {
     <div className="w-[1200px] mx-auto">
       <div className="m-5">
         <input
-          data-testid = "searchBox"
+          data-testid = "searchBox" 
           className="w-[92%] p-1.5 border-solid border-r-transparent border-2 border-black "
           type="text"
           value={searchText}
